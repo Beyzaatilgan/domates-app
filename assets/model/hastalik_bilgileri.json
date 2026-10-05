@@ -1,0 +1,83 @@
+{
+  "_not": "Bu dosya 10 domates yaprak sinifi icin Turkce bilgi metinleridir. Anahtarlar modelin sinif isimleriyle BIREBIR aynidir (class_names sirasi). Ilac/kimyasal onerileri bir ziraat muhendisine dogrulatilmalidir.",
+
+  "bacterial_spot": {
+    "ad": "Bakteriyel Leke",
+    "tip": "hastalik",
+    "aciklama": "Bakteri kaynakli bir hastaliktir. Yapraklarda, saplarda ve meyvelerde kucuk, koyu, sulu gorunumlu lekeler olusturur. Nemli ve sicak havalarda hizla yayilir.",
+    "belirtiler": "Yapraklarda 1-3 mm capinda koyu kahverengi-siyah lekeler; lekelerin etrafinda sari hale; ilerledikce yapraklarin sararip dokulmesi.",
+    "oneri": "Hastalikli yapraklari toplayip uzaklastirin. Ustten sulamadan kacinin (yapragi islatmayin), damla sulama tercih edin. Bitkiler arasinda hava akimi icin yeterli bosluk birakin. Tohumu saglikli kaynaktan alin. Bakir icerikli korumali ilaclar kullanilabilir; dozu ve urunu icin ziraat muhendisine danisin."
+  },
+
+  "early_blight": {
+    "ad": "Erken Yaniklik (Alternaria)",
+    "tip": "hastalik",
+    "aciklama": "Alternaria mantari kaynakli yaygin bir hastaliktir. Genellikle once alt (yasli) yapraklarda baslar ve yukari dogru ilerler.",
+    "belirtiler": "Yapraklarda ic ice halkalardan olusan (hedef tahtasi gorunumlu) kahverengi lekeler; lekelerin etrafinda sarariklik; siddetli durumda yapragin kurumasi.",
+    "oneri": "Alt enfekteli yapraklari temizleyin. Munavebe (ekim nobeti) uygulayin, ayni alana ust uste domates ekmeyin. Bitki dibini malclayarak topraktan sicramayi azaltin. Dengeli gubreleme ile bitkiyi guclu tutun. Koruyucu mantar ilaclari gerekebilir; secim icin uzmana danisin."
+  },
+
+  "late_blight": {
+    "ad": "Mildiyo / Gec Yaniklik (Phytophthora)",
+    "tip": "hastalik",
+    "aciklama": "Cok hizli yayilan ve ciddi urun kaybina yol acabilen mantari bir hastaliktir. Serin ve nemli havalarda patlama yapar. Gecmiste kitlik seviyesinde zararlara neden olmustur.",
+    "belirtiler": "Yapraklarda duzensiz, su emmis gibi koyu yesil-kahverengi genis lekeler; yaprak altinda beyazimsi kuf tabakasi; govde ve meyvelerde kahverengi cursukler; hizla tum bitkiye yayilma.",
+    "oneri": "ACIL mudahale gerektirir. Enfekteli bitkileri derhal uzaklastirin ve imha edin (kompost yapmayin). Ustten sulamayi kesin. Nem ve yaprak islakligini azaltin. Bu hastalik hizli ilerledigi icin koruyucu ilaclama ve erken mudahale kritiktir; vakit kaybetmeden ziraat muhendisine basvurun."
+  },
+
+  "leaf_mold": {
+    "ad": "Yaprak Kufu (Cladosporium)",
+    "tip": "hastalik",
+    "aciklama": "Ozellikle serada, yuksek nem kosullarinda gorulen mantari bir hastaliktir. Havalandirmasi zayif ortamlarda yayginlasir.",
+    "belirtiler": "Yaprak ustunde sari-yesil solgun lekeler; yaprak altinda zeytin yesili-kahverengi kadifemsi kuf; ilerledikce yapraklarin sararip kurumasi.",
+    "oneri": "Serada havalandirmayi artirin ve nemi dusurun. Bitkiler arasi mesafeyi acin. Ustten sulamadan kacinin. Enfekteli yapraklari temizleyin. Dayanikli cesit tercih edin. Gerekirse uygun mantar ilaci icin uzmana danisin."
+  },
+
+  "septoria_leaf_spot": {
+    "ad": "Septoria Yaprak Lekesi",
+    "tip": "hastalik",
+    "aciklama": "Septoria mantari kaynakli, ozellikle nemli havalarda yapraklarda yogun lekelenme yapan bir hastaliktir. Genellikle meyveye zarar vermez ama yaprak kaybiyla dolayli urun dususune yol acar.",
+    "belirtiler": "Yapraklarda cok sayida kucuk, yuvarlak, gri-bej merkezli ve koyu kenarli lekeler; lekelerin ortasinda minik siyah noktalar; alt yapraklardan baslayip yukari ilerleme.",
+    "oneri": "Enfekteli yapraklari toplayin. Munavebe uygulayin. Bitki dibini malclayin, topraktan sicramayi onleyin. Ustten sulamadan kacinin. Siddetli durumda koruyucu ilaclama gerekebilir; urun secimi icin uzmana danisin."
+  },
+
+  "spider_mites": {
+    "ad": "Kirmizi Orumcek (Iki Noktali Akar)",
+    "tip": "zararli",
+    "aciklama": "Hastalik degil, bir zararlidir. Cok kucuk orumceksi akarlar yaprak altinda beslenerek bitkinin ozsuyunu emer. Sicak ve kuru havalarda hizla cogalir.",
+    "belirtiler": "Yapraklarda sari-beyaz minik noktacikli benekler; ilerledikce yapragin solmasi ve bronzlasmasi; yaprak altinda ince agsi orumcek dokusu; yapragin kuruyup dokulmesi.",
+    "oneri": "Nemi biraz artirmak cogalmayi yavaslatir (kuru ortami severler). Yapraklari su ile yikamak populasyonu azaltabilir. Siddetli bulasmada enfekteli yapraklari temizleyin. Faydali bocekler (avci akarlar) ya da uygun akarisit kullanilabilir; secim icin uzmana danisin. Genis spektrumlu ilaclardan kacinin, dogal dusmanlarini da oldururler."
+  },
+
+  "target_spot": {
+    "ad": "Hedef Leke (Corynespora)",
+    "tip": "hastalik",
+    "aciklama": "Corynespora mantari kaynakli, yaprak, sap ve meyvede lekelenme yapan bir hastaliktir. Nemli ve ilik kosullarda gorulur.",
+    "belirtiler": "Yapraklarda ic ice halkali, hedef tahtasi gorunumlu kahverengi lekeler (erken yanikliga benzer); lekelerin birlesip genis kuru alanlar olusturmasi; meyvede cukur lekeler.",
+    "oneri": "Enfekteli bitki artiklarini temizleyin. Havalandirma ve bitki arasi mesafeyi artirin. Ustten sulamadan kacinin. Munavebe uygulayin. Gerekirse koruyucu mantar ilaci icin uzmana danisin."
+  },
+
+  "mosaic_virus": {
+    "ad": "Mozaik Virusu",
+    "tip": "virus",
+    "aciklama": "Viral bir hastaliktir. Tedavisi yoktur; mucadele onleme ve bulasik bitkiyi uzaklastirma uzerinedir. Mekanik yolla (el, alet, temas) ve bazi bocekelerle bulasir.",
+    "belirtiler": "Yapraklarda acik-koyu yesil alacali (mozaik) desen; yapraklarda buruşma, kivrilma ve sekil bozuklugu; bitkide bodurlasma ve verim dususu.",
+    "oneri": "Kesin tedavisi yoktur. Enfekteli bitkileri sokup uzaklastirin (yayilmayi onlemek icin). Bitkilere dokunmadan once ellerinizi ve aletleri temizleyin (sigara icenler tutun virusune dikkat etmeli). Yabanci ot kontrolu yapin. Saglikli/sertifikali tohum kullanin. Bulastirici bocekelerle mucadele edin."
+  },
+
+  "yellow_leaf_curl_virus": {
+    "ad": "Sari Yaprak Kivirciklik Virusu",
+    "tip": "virus",
+    "aciklama": "Beyaz sinek (Bemisia tabaci) ile tasinan ciddi bir viral hastaliktir. Tedavisi yoktur; mucadele vektor bocek (beyaz sinek) kontrolu ve onleme uzerinedir.",
+    "belirtiler": "Yapraklarda yukari dogru kivrilma ve kaseleme; yaprak kenarlarinda ve damar aralarinda sararma; yapraklarda kuculme; bitkide belirgin bodurlasma ve meyve tutmada azalma.",
+    "oneri": "Kesin tedavisi yoktur. Enfekteli bitkileri erkenden sokup imha edin. Asil mucadele beyaz sinek ile yapilir: sari yapiskan tuzaklar, tul/agla fiziksel koruma, uygun insektisit (secim icin uzmana danisin). Dayanikli cesitler tercih edin. Yabanci otlari temizleyin."
+  },
+
+  "healthy": {
+    "ad": "Saglikli",
+    "tip": "saglikli",
+    "aciklama": "Yaprakta belirgin bir hastalik ya da zararli belirtisi tespit edilmedi. Bitki saglikli gorunuyor.",
+    "belirtiler": "Duzgun yesil renk, lekesiz ve deforme olmamis yaprak yapisi.",
+    "oneri": "Herhangi bir mudahale gerekmez. Duzenli kontrol, dengeli sulama ve gubreleme ile bitki sagligini korumaya devam edin. Onleyici olarak bahcenin havalandirmasina ve yabanci ot kontrolune dikkat edin."
+  }
+}
