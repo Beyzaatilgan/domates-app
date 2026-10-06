@@ -1,98 +1,70 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
+import { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Asset } from 'expo-asset';
+import { loadTensorflowModel } from 'react-native-fast-tflite';
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
-
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
-  return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
-  );
-}
+import meta from '../../assets/model/model_meta.json';
 
 export default function HomeScreen() {
+  const [log, setLog] = useState<string[]>([]);
+  const ekle = (s: string) => setLog((p) => [...p, s]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const req = require('../../assets/model/model_float32.tflite');
+        ekle('1) require tipi: ' + typeof req + ' | deger: ' + JSON.stringify(req));
+
+        const asset = Asset.fromModule(req);
+        ekle('2) asset.uri (indirmeden): ' + asset.uri);
+        ekle('   asset.localUri (indirmeden): ' + String(asset.localUri));
+
+        await asset.downloadAsync();
+        ekle('3) indirme sonrasi localUri: ' + String(asset.localUri));
+        ekle('   downloaded: ' + String(asset.downloaded));
+
+        // Yontem A: dogrudan require
+        try {
+          const m1 = await loadTensorflowModel(req, []);
+          ekle('A) require ile YUKLENDI. girdi: ' + JSON.stringify(m1.inputs[0]?.shape));
+        } catch (e) {
+          ekle('A) require ile HATA: ' + String(e));
+        }
+
+        // Yontem B: localUri ile
+        try {
+          const m2 = await loadTensorflowModel({ url: asset.localUri ?? asset.uri });
+          ekle('B) url ile YUKLENDI. girdi: ' + JSON.stringify(m2.inputs[0]?.shape));
+        } catch (e) {
+          ekle('B) url ile HATA: ' + String(e));
+        }
+      } catch (e) {
+        ekle('GENEL HATA: ' + String(e));
+      }
+    })();
+  }, []);
+
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
-
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
-
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
-
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+    <SafeAreaView style={styles.safe}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.baslik}>Model teshis</Text>
+        <Text style={styles.detay}>Girdi boyutu (meta): {meta.input_size}</Text>
+        <View style={styles.kutu}>
+          {log.map((l, i) => (
+            <Text key={i} style={styles.log}>{l}</Text>
+          ))}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
-  },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
-  },
-  title: {
-    textAlign: 'center',
-  },
-  code: {
-    textTransform: 'uppercase',
-  },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
-  },
+  safe: { flex: 1, backgroundColor: '#f5f7f2' },
+  container: { padding: 20, gap: 12 },
+  baslik: { fontSize: 20, fontWeight: '700', color: '#2e4d1f' },
+  detay: { fontSize: 13, color: '#555' },
+  kutu: { backgroundColor: '#fff', borderRadius: 10, padding: 14, gap: 8, borderWidth: 1, borderColor: '#e0e6d8' },
+  log: { fontSize: 12, color: '#333', fontFamily: 'monospace' },
 });

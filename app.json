@@ -34,7 +34,8 @@
           "imageWidth": 76
         }
       ],
-      "react-native-fast-tflite"
+      "react-native-fast-tflite",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true,
